@@ -17,3 +17,38 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(farspackage)
 ```
+
+# Vignette for the farspackage
+
+This package reads and summarises USA National Highway Traffic Safety Administration NHFTS [Fatality Analysis Reporting System FARS](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) format data files.
+
+## To load a FARS formatted data file
+
+```{r}
+fars_read("accident_2013.csv.bz2")
+```
+
+## To make a filename with a certain year as an input for other functions in this package
+
+```{r}
+make_filename(2020)
+```
+
+## To create a tibble from a FARS formatted data file(s) of a certain year
+
+```{r}
+fars_read_years(c(2013, 2014, 2015))
+```
+
+## To summarise the number of fatalities per month for a given year of a FARS formatted data file
+
+```{r}
+fars_summarize_years(c(2013, 2014, 2015))
+```
+
+## To produce a simple map of the location of fatalities within a certain state and year
+
+```{r}
+fars_map_state(6, 2013)
+```
+
