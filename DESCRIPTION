@@ -15,4 +15,4 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 7.1.0
-Imports: dplyr, maps
+Imports: dplyr, maps, readr, tidyr, graphics
