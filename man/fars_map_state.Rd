@@ -25,6 +25,5 @@ This function produces a map of the location of fatalities per state and
 }
 \examples{
 fars_map_state(6, 2013)
-fars_map_state(57, 2013) # Invalid STATE number
 
 }

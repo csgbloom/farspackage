@@ -6,7 +6,7 @@ Date: 2020-05-09
 Author: Tomas Murray <email@email.com>
 Maintainer: Tomas Murray <email@email.com>
 Description: Functions that load and summarise USA National Highway Traffic Safety Administration (NHFTS) Fatality Analysis Reporting System (FARS) formatted data files.
-License: GPL v3.0
+License: GPL-3
 URL: https://github.com/csgbloom/farspackage
 Encoding: UTF-8
 LazyData: true

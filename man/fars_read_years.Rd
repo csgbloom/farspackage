@@ -7,7 +7,7 @@
 fars_read_years(years)
 }
 \arguments{
-\item{year}{A string of length 4 giving the year, or list of years, in the
+\item{years}{A string of length 4 giving the year, or list of years, in the
 NHFTS FARS filename from which the month and year attributes will be
 summarised.}
 }

@@ -18,10 +18,11 @@
 #'
 #' @export
 fars_read <- function(filename) {
-  if(!file.exists(filename))
-    stop("file '", filename, "' does not exist")
+  fname <- system.file("extdata", filename, package="farspackage")
+  if(!file.exists(fname))
+    stop("file '", fname, "' does not exist")
   data <- suppressMessages({
-    readr::read_csv(filename, progress = FALSE)
+    readr::read_csv(fname, progress = FALSE)
   })
   dplyr::tbl_df(data)
 }
@@ -52,7 +53,7 @@ make_filename <- function(year) {
 #'  /href{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars}
 #'  file containing that year in the filename.
 #'
-#' @param year A string of length 4 giving the year, or list of years, in the
+#' @param years A string of length 4 giving the year, or list of years, in the
 #'  NHFTS FARS filename from which the month and year attributes will be
 #'  summarised.
 #'
@@ -60,7 +61,7 @@ make_filename <- function(year) {
 #'  If a year is entered that does not have the corresponding filename a
 #'  warning message will be printed to the console.
 #'
-#' @importFrom dplyr mutate select
+#' @importFrom dplyr mutate select %>%
 #'
 #' @examples
 #' fars_read_years(2013)
@@ -96,7 +97,7 @@ fars_read_years <- function(years) {
 #' @return A tibble containing the number of fatalities per month for each
 #'  input year.
 #'
-#' @importFrom dplyr bind_rows group_by summarize
+#' @importFrom dplyr bind_rows group_by summarize %>%
 #' @importForm tidyr spread
 #'
 #' @examples
@@ -123,17 +124,17 @@ fars_summarize_years <- function(years) {
 #'  format file in the STATE attribute
 #' @param year A string of length 4 representing the year in the file name
 #'
+#'
 #' @return A plot of the state boundary polygon with fatalities as points. If
 #'  an invalid state number or if there are no fatalities recorded for that
 #'  state for the input year a warning message will be returned.
 #'
-#' @importFrom dplyr filter
+#' @importFrom dplyr filter %>%
 #' @importForm maps map
 #' @importFrom graphics points
 #'
 #' @examples
 #' fars_map_state(6, 2013)
-#' fars_map_state(57, 2013) # Invalid STATE number
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
