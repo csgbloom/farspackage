@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.com/csgbloom/farspackage.svg?branch=master)](https://travis-ci.com/csgbloom/farspackage)
+<!-- badges: end -->
+
 # farspackage
 
 The farspackage is an assignment submitted on week 4 of the Coursera [Building Packages in R](https://www.coursera.org/learn/r-packages) course.  This package reads, summarises and plots basic maps from USA National Highway Traffic Safety Administration NHFTS [Fatality Analysis Reporting System FARS](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars) format data files.
